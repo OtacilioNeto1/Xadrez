@@ -6,7 +6,11 @@ int main() {
     const int casas_bispo = 5;
     const int casas_rainha = 8;
 
-    int i; // variável para controle de repetição
+    // Para o cavalo:
+    const int movimentos_para_baixo = 2;
+    const int movimentos_para_esquerda = 1;
+
+    int i, j; // variáveis para controle de repetição
 
     // 1) Movimento da Torre (for)
     // Torre move-se para a direita (horizontal)
@@ -37,7 +41,34 @@ int main() {
         i++;
     } while (i < casas_rainha);
 
-    printf("\nPressione Enter para sair...");
+    printf("\n");
+
+    // 4) Movimento do Cavalo (loops aninhados: for + while)
+    // Cavalo move 2 casas para baixo, depois 1 casa para esquerda (movimento em "L")
+    // Usando loop for externo e loop while interno
+
+    printf("Movimento do Cavalo (2 casas para baixo, 1 casa para esquerda):\n");
+
+    // Loop for para as etapas do movimento: duas etapas para baixo e uma para esquerda
+    // Como o movimento é dividido em duas partes, fazemos assim:
+    for (i = 0; i < 2; i++) { // duas casas para baixo
+        j = 0;
+        while (j < 1) {  // só uma impressão por iteração do for
+            printf("Baixo\n");
+            j++;
+        }
+    }
+
+    // Agora uma casa para esquerda, fora do loop for, mas vamos usar while para cumprir o requisito
+    j = 0;
+    while (j < movimentos_para_esquerda) {
+        printf("Esquerda\n");
+        j++;
+    }
+
+    printf("\n");
+
+    printf("Pressione Enter para sair...");
     getchar();
 
     return 0;
