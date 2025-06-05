@@ -37,5 +37,8 @@ int main() {
         i++;
     } while (i < casas_rainha);
 
+    printf("\nPressione Enter para sair...");
+    getchar();
+
     return 0;
 }
